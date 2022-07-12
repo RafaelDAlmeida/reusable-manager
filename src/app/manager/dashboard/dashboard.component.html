@@ -1,0 +1,23 @@
+<mat-card>
+    <div class="row col-12" style="align-items: center;">
+        <div class="col-9" style="vertical-align: middle;">
+            <h2 class="text-muted">Users</h2>
+        </div>
+    
+        <div style="float: left; ">
+            <button type="button" mat-fab color="primary" matTooltip="Create user" (click)="createUser()" class="create-button">
+                <mat-icon>add</mat-icon>
+            </button>
+        </div>
+    </div>
+    <hr>
+    <div>
+        <reusable-table #tableChild
+            [columnsToDisplay]="columnsToDisplay"
+            [expandedElement]="expandedElement"
+            [dataSource]="dataSource"
+            [colunasExibidasTexto]="colunasExibidasTexto"
+            [colunasAcoes]="colunasAcoes">
+        </reusable-table>
+    </div>
+</mat-card>

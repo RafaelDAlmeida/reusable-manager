@@ -4,9 +4,14 @@
     "newProjectRoot": "projects",
     "projects": {
         "test-ng7": {
+            "projectType": "application",
+            "schematics": {
+                "@schematics/angular:component": {
+                "style": "scss"
+                }
+            },
             "root": "",
             "sourceRoot": "src",
-            "projectType": "application",
             "architect": {
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
@@ -17,8 +22,8 @@
                         "tsConfig": "src/tsconfig.app.json",
                         "polyfills": "src/polyfills.ts",
                         "assets": ["src/assets", "src/favicon.ico"],
-                        "styles": ["node_modules/font-awesome/css/font-awesome.css", "src/styles/app.scss"],
-                        "scripts": ["node_modules/chart.js/dist/Chart.js"],
+                        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "src/styles/app.scss"],
+                        "scripts": ["node_modules/chart.js/dist/chart.js"],
                         "allowedCommonJsDependencies": ["chart.js"],
                         "aot": false,
                         "vendorChunk": true,
@@ -80,7 +85,7 @@
                         "tsConfig": "src/tsconfig.spec.json",
                         "karmaConfig": "src/karma.conf.js",
                         "scripts": ["node_modules/chart.js/dist/Chart.js"],
-                        "styles": ["node_modules/font-awesome/css/font-awesome.css", "src/styles/app.scss"],
+                        "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "src/styles/app.scss"],
                         "assets": ["src/assets", "src/favicon.ico"]
                     }
                 }
@@ -106,14 +111,6 @@
             }
         }
     },
-    "defaultProject": "test-ng7",
-    "schematics": {
-        "@schematics/angular:component": {
-            "prefix": "app",
-            "styleext": "scss"
-        },
-        "@schematics/angular:directive": {
-            "prefix": "app"
-        }
-    }
+    "defaultProject": "test-ng7"
+
 }

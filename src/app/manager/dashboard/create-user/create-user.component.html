@@ -1,0 +1,50 @@
+<mat-card class="main-card">  
+    <h2>{{make}} User {{nomeFuncionario}}</h2>
+    <!-- <sigelu-breadcrumbs [crumbs]="[ { nome: 'Home', caminho:'/' }, { nome:'Funcionários', caminho:'/funcionarios' }, { nome: tituloBreadcumb, caminho: ''} ]"></sigelu-breadcrumbs> -->
+    <hr>
+  
+    <mat-card>
+  
+      <form [formGroup]="funcionarioFormGroup">
+        
+        <div class="row">
+          <mat-form-field class="col-lg-3 col-md-3 col-sm-12">
+            <input matInput placeholder="Nome" formControlName="nome" autocomplete="off" required>
+            <mat-hint>*Obrigatório</mat-hint>
+            <mat-error *ngIf="funcionarioFormGroup.get('nome').hasError('nomeExistente')">
+              Nome já em uso.
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <br>
+        
+        <div class="row">
+          <mat-form-field class="col-lg-3 col-md-3 col-sm-12">
+            <mat-select placeholder="Tipo" formControlName="tipoFuncionario" required>
+              <ng-container *ngIf="values$ | async">
+                <mat-option *ngFor="let tipo of tipoFuncionarios" [value]="tipo.codigo">
+                  {{tipo.nome}}
+                </mat-option>
+              </ng-container>
+            </mat-select>
+            <mat-hint>*Obrigatório</mat-hint>
+          </mat-form-field>
+        </div>
+        <br>
+       
+        <br>
+        <div class="row">
+          <div class="col-lg-1 col-md-1 col-sm-12">
+              <a mat-raised-button [routerLinkActive]="'active'" (click)="cancelar()">Cancelar</a>
+          </div>
+          <div class="col-lg-11 col-md-11 col-sm-12 save-button-div">
+            <a class="salvar-button" mat-raised-button [routerLinkActive]="'active'" [disabled]="!funcionarioFormGroup.valid" (click)="executarServico()">
+              Salvar
+            </a>
+          </div>
+        </div>
+  
+      </form>
+    </mat-card>
+  
+  </mat-card>

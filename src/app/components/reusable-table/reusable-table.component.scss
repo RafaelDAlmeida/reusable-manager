@@ -1,0 +1,123 @@
+.ações{
+  display: flex !important;
+  max-width: 10%;
+}
+
+.collapse{
+  max-width: 60px;
+  min-width: 60px;
+}
+
+::ng-deep
+.mat-form-field-ripple {
+  background-color: #44B8B5 !important;
+}
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label{
+  color: #44B8B5 !important
+}
+::ng-deep 
+.mat-form-field.mat-focused .mat-input-element {
+  color: #44b8b5 !important;
+  caret-color: #44B8B5 !important;
+}
+
+.expandir-button{
+  color: #44b8b5;
+}
+
+.expandir-button:disabled{
+  color: #aaa;
+}
+
+.pesquisa-button {
+  color: #fff;
+  background-color: #44b8b5;
+}
+
+.pesquisa-button:hover {
+  background-color: #56c2be;
+}
+
+.pesquisa-campo{
+  width: 70%;
+}
+
+@media only screen and (min-width: 720px) {
+  #mostrar-busca-avancada{
+      position: relative;
+      float: right;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  #mostrar-busca-avancada{
+      position: relative;
+      float: none;
+      margin-bottom: 15px;
+  }
+}
+
+h6{
+  margin:0;
+}
+
+p{
+  margin:0;
+}
+
+.tituloTabela{
+  font-size: 0.75em;
+  color: rgba(0,0,0,.54)
+}
+
+#busca{
+  width: 100%;
+  text-align: end;
+}
+
+::ng-deep
+.mat-grid-tile .mat-figure{
+  justify-content: left !important;
+}
+
+::ng-deep 
+mat-cell:first-of-type, 
+mat-footer-cell:first-of-type, 
+mat-header-cell:first-of-type, 
+mat-cell:last-of-type, 
+mat-footer-cell:last-of-type, 
+mat-header-cell:last-of-type {
+
+  padding: 0 0 0 0 !important;
+
+}
+
+::ng-deep .mat-icon-button:disabled {
+  .mat-button-wrapper {
+      .mat-paginator-icon {
+          fill: #bdbdbd;
+      }
+  }
+}
+
+::ng-deep .mat-paginator-icon:hover {
+  fill: #44b8b5;  
+}
+
+#data-source-empty {
+  background-color: #f4f4f4;
+  text-align: center;
+  font-size: 14px;
+  cursor: default !important;
+  justify-content: center;
+  color: #44b8b5;
+  padding: 15px;
+}
+
+mat-checkbox {
+  margin-left: 15px;
+}
+
+.esconder {
+  display: none;
+}
